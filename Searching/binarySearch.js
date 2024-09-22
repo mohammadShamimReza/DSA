@@ -1,16 +1,14 @@
 let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
-const target = 440;
+const target = 20;
 
 const binarySearch = (arr, target) => {
   let left = 0;
   let right = arr.length - 1;
-    let mid;
-    
-    for (let index = 0; left < right; index++) {
-        mid =  Math.floor((left + right) / 2);
-        console.log(left,right, mid)
-    console.log(index);
+  let mid;
+
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
     if (arr[mid] === target) {
       return mid;
     }
