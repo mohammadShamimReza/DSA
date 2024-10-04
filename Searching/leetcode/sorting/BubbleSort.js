@@ -13,7 +13,7 @@ function BubbleSort(arr) {
             }
         }
      }
-    
+    return arr
 }
 
 
