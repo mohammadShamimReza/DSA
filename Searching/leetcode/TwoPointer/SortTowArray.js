@@ -1,46 +1,32 @@
-const arr2 = [3, 4, 6, 8, 10, 54, 93]
 const arr = [1, 2, 5, 9]
+const arr2 = [3, 4, 6, 8, 10, 54, 93]
 
 let arr3 = []
 
 const sortTwoArrays = (arr, arr2) => {
-    const bigArr = arr.length > arr2.length ? arr : arr2;
-    const smallArr = arr.length < arr2.length ? arr : arr2;
-    let bi = 0;
-    let sj = 0;
     let i = 0;
-    while (i < bigArr.length) {
-        if (bi < bigArr.length) {
-            if (bigArr[bi] < smallArr[sj]) {
-                arr3.push(bigArr[bi]);
-                bi++;
-            }
+    let j = 0;
+
+
+    while (i < arr.length && j < arr2.length) {
+        if (arr[i] < arr2[j]) { 
+            arr3.push(arr[i]);
+            i++;
+        } else {
+            arr3.push(arr2[j]);
+            j++;
         }
-        if (sj < smallArr.length) {
-            if (smallArr[sj] < bigArr[bi]) { 
-                arr3.push(smallArr[sj]);
-                sj++;
-            }
-        }
+    }
+    while (i < arr.length) { 
+        arr3.push(arr[i]);
         i++;
     }
-
-    console.log(bi)
-
-    while (bi < bigArr.length) {
-        arr3.push(bigArr[bi]);
-        bi++;
+    while (j < arr2.length) { 
+        arr3.push(arr2[j]);
+        j++;
     }
-
-    console.log(bi, bigArr.length)
-
     return arr3;
     
 }      
-
-
-
- 
-
 
  console.log(sortTwoArrays(arr, arr2))
