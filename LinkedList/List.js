@@ -14,13 +14,28 @@ class LinkedList {
         this.length = 1;
         console.log(node)
     }
-    insert(data) {
-        let node = new NodeLinkList(data);
+    append(value) {
+        let node = new NodeLinkList(value);
         console.log(node)
         this.tail.next = node
         this.tail = node
         this.length++;
     }
+
+    prepend(value) {
+        let node = new NodeLinkList(value)
+        node.next = this.head
+        this.head = node
+        this.length++
+    }
+
+
+    appendAtPositon(value, position) {
+        
+    }
+
+
+
     // delete() {
     //     this.length--;
     //     this.tail.next = null
@@ -31,9 +46,12 @@ class LinkedList {
 
 
 const list1 = new LinkedList(10);
-list1.insert(20)
-list1.insert(30);
-list1.insert(40)
+list1.append(20);
+list1.append(30);
+
+list1.prepend(50);
+list1.prepend(5)
+list1.appendAtPositon(100, 3)
 console.log(list1)
 
 // list1.delete()
