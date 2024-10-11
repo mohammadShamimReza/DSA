@@ -31,27 +31,41 @@ class LinkedList {
 
 
     appendAtPositon(value, position) {
-        
+        let node = new NodeLinkList(value)
+        console.log(node)
+        let prevNode = this.findNode(position - 1)
+        const temp = prevNode.next;
+        prevNode.next = node;
+        node.next = temp;
+        this.length++
     }
 
 
+    findNode(position) {
+        let data = this.head
+        let count = 0;
 
-    // delete() {
-    //     this.length--;
-    //     this.tail.next = null
-    //     this.tail = null
-    //     console.log()
-    // }
+        while (true) {
+            count++;
+            if (count === position) {
+                break
+            }
+            data = data.next
+            
+        }
+        console.log(data)
+        return data
+    }
+
+    
+   
 }
 
 
 const list1 = new LinkedList(10);
 list1.append(20);
-list1.append(30);
-
-list1.prepend(50);
-list1.prepend(5)
-list1.appendAtPositon(100, 3)
+list1.append(30)
+list1.appendAtPositon(100, 2)
 console.log(list1)
 
 // list1.delete()
