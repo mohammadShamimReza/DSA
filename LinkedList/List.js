@@ -31,6 +31,14 @@ class LinkedList {
 
 
     appendAtPositon(value, position) {
+        if (position === 1) {
+            this.prepend(value)
+            return
+        }
+        if (position > this.length)  {
+            this.append(value)
+            return
+        }
         let node = new NodeLinkList(value)
         console.log(node)
         let prevNode = this.findNode(position - 1)
@@ -57,15 +65,39 @@ class LinkedList {
         return data
     }
 
-    
-   
+    print() {
+        let data = this.head
+        let result = [];
+        while (data) {
+            console.log(data.value)
+            result.push(data.value)
+            data = data.next
+        }
+        console.log(result)
+        return result;
+    }
+
+    updateValue(value, n) {
+        let node = this.findNode(n)
+        console.log(node)
+        node.value = value
+    }
+
 }
 
 
 const list1 = new LinkedList(10);
 list1.append(20);
 list1.append(30)
-list1.appendAtPositon(100, 2)
+list1.appendAtPositon(100, 1)
+
+list1.append(50)
+list1.prepend(40)
+
+list1.appendAtPositon(200, 1);
+list1.print()
+
+list1.updateValue(101, 1)
 console.log(list1)
 
 // list1.delete()
