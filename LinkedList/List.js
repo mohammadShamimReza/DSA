@@ -83,6 +83,12 @@ class LinkedList {
         node.value = value
     }
 
+    delete(n) {
+        let prevNode = this.findNode(n - 1)
+
+        prevNode.next = prevNode.next.next
+        this.length--
+    }
 }
 
 
@@ -98,6 +104,7 @@ list1.appendAtPositon(200, 1);
 list1.print()
 
 list1.updateValue(101, 1)
+list1.delete(2)
 console.log(list1)
 
 // list1.delete()
