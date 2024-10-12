@@ -1,3 +1,5 @@
+// Singlely linked list implementation
+
 class NodeLinkList{
     constructor( value, next = null) {
         this.value = value;
@@ -8,7 +10,11 @@ class NodeLinkList{
 
 
 class LinkedList {
-    constructor(data) {
+    head = null;
+    tail = null; 
+    length = 0
+
+    constructor(data, head) {
         let node = new NodeLinkList(data);
         this.head = this.tail = node;
         this.length = 1;
@@ -16,7 +22,6 @@ class LinkedList {
     }
     append(value) {
         let node = new NodeLinkList(value);
-        console.log(node)
         this.tail.next = node
         this.tail = node
         this.length++;
@@ -40,7 +45,6 @@ class LinkedList {
             return
         }
         let node = new NodeLinkList(value)
-        console.log(node)
         let prevNode = this.findNode(position - 1)
         const temp = prevNode.next;
         prevNode.next = node;
@@ -94,17 +98,17 @@ class LinkedList {
 
 const list1 = new LinkedList(10);
 list1.append(20);
-list1.append(30)
-list1.appendAtPositon(100, 1)
+// list1.append(30)
+// list1.appendAtPositon(100, 1)
 
-list1.append(50)
-list1.prepend(40)
+// list1.append(50)
+// list1.prepend(40)
 
-list1.appendAtPositon(200, 1);
-list1.print()
+// list1.appendAtPositon(200, 1);
+// list1.print()
 
-list1.updateValue(101, 1)
-list1.delete(2)
+// list1.updateValue(101, 1)
+// list1.delete(2)
 console.log(list1)
 
 // list1.delete()
