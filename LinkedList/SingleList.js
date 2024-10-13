@@ -73,11 +73,9 @@ class LinkedList {
         let data = this.head
         let result = [];
         while (data) {
-            console.log(data.value)
-            result.push(data.value)
-            data = data.next
+          result.push(data.value);
+          data = data.next;
         }
-        console.log(result)
         return result;
     }
 
