@@ -20,14 +20,14 @@ class LinkedList {
         this.length = 1;
         console.log(node)
     }
-    append(value) {
+    append(value) { //push
         let node = new NodeLinkList(value);
         this.tail.next = node
         this.tail = node
         this.length++;
     }
 
-    prepend(value) {
+    prepend(value) { //pop
         let node = new NodeLinkList(value)
         node.next = this.head
         this.head = node
