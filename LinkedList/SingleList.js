@@ -69,6 +69,14 @@ class LinkedList {
         return data
     }
 
+    printRecursion(data) {
+        if (!data) {
+            return;
+        }
+        console.log(data.value)
+        this.printRecursion(data.next);
+    }
+
     print() {
         let data = this.head
         let result = [];
@@ -107,7 +115,9 @@ list1.append(20);
 
 // list1.updateValue(101, 1)
 // list1.delete(2)
-console.log(list1)
+// console.log(list1)
+
+list1.printRecursion(list1.head)
 
 // list1.delete()
 // console.log(list1)
