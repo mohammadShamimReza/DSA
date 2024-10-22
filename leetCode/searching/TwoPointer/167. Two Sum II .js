@@ -1,4 +1,5 @@
-let numbers = [2, 7, 11, 15]; let target = 9;
+let numbers = [2, 7, 11, 15];
+let target = 9;
 
 
 const findTowSumTarget = (numbers, target) => { 
