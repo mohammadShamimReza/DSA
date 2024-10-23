@@ -17,7 +17,6 @@ function merge(arr, left, mid, right) {
   let i = 0,
     j = 0,
     k = left;
-
   while (i < leftArr.length && j < rightArr.length) {
     if (leftArr[i] <= rightArr[j]) {
       arr[k] = leftArr[i];
@@ -28,13 +27,11 @@ function merge(arr, left, mid, right) {
     }
     k++;
   }
-
   while (i < leftArr.length) {
     arr[k] = leftArr[i];
     i++;
     k++;
   }
-
   while (j < rightArr.length) {
     arr[k] = rightArr[j];
     j++;
