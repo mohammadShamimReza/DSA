@@ -35,10 +35,27 @@ class BinarySearchTree {
         }
     }
 
+    search(target) {
+        let node = this.root;
+        while (true) {
+            if (node === null) {
+                return false;
+            }
+            if (node.value === target) {
+                return true;
+            }
+            if (node.value < target) {
+                node = node.right;
+            } else {
+                node = node.left;
+            }
+        }
+    }
+
 }
 
 let bst = new BinarySearchTree(10);
 bst.insert(25);
 bst.insert(15);
 
-console.log(bst)
+console.log(bst.search(25))
